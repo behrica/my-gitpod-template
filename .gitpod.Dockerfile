@@ -17,5 +17,5 @@ RUN curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh &&
 
 USER gitpod
 #ENV WINDOW_MANAGER mutter
-RUN  mkdir /home/gitpod/.config/openbox
+RUN  mkdir -p  /home/gitpod/.config/openbox
 RUN echo "emacs" >  /home/gitpod/.config/openbox/autostart
