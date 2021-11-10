@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full-vnc:latest
+FROM gitpod/workspace-full-vnc:commit-24b60e9fc9a28e7967a129861736578d66101661
 
 # install emacs27
 RUN sudo add-apt-repository -y ppa:kelleyk/emacs
