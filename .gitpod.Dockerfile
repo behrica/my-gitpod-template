@@ -11,3 +11,9 @@ RUN ~/.emacs.d/bin/doom env
 RUN yes | ~/.emacs.d/bin/doom -y install
 RUN rm -rf /home/gitpod/.doom.d/ && git clone https://github.com/behrica/doom.d.git /home/gitpod/.doom.d/
 RUN GIT_SSL_NO_VERIFY=true ~/.emacs.d/bin/doom -y sync
+USER root
+RUN apt-get install fonts-hack rlwrap i3-wm
+RUN curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && chmod +x linux-install-1.10.3.1020.sh && ./linux-install-1.10.3.1020.sh
+
+USER gitpod
+ENV WINDOW_MANAGER i3
