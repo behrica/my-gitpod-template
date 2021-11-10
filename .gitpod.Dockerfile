@@ -8,7 +8,7 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuratio
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y emacs27 fonts-hack rlwrap i3-wm
 
 # install Clojure
-RUN sudo curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && chmod +x linux-install-1.10.3.1020.sh && ./linux-install-1.10.3.1020.sh
+RUN sudo curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && sudo chmod +x linux-install-1.10.3.1020.sh && sudo ./linux-install-1.10.3.1020.sh
 
 
 # use my doom config
