@@ -1,19 +1,17 @@
 FROM gitpod/workspace-full-vnc:latest
 
 # install emacs27
-USER root
-RUN add-apt-repository -y ppa:kelleyk/emacs
-RUN apt-get update
-RUN apt-get remove -y emacs26-common emacs26 emacs-common emacs apel flim w3m-el emacs-el emacs-bin-common 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y emacs27 fonts-hack rlwrap i3-wm
+RUN sudo add-apt-repository -y ppa:kelleyk/emacs
+RUN sudo apt-get update
+RUN sudo apt-get remove -y emacs26-common emacs26 emacs-common emacs apel flim w3m-el emacs-el emacs-bin-common 
+RUN DEBIAN_FRONTEND=noninteractive sudo apt-get install -y keyboard-configuration
+RUN DEBIAN_FRONTEND=noninteractive sudo apt-get install -y emacs27 fonts-hack rlwrap i3-wm
 
 # install Clojure
-RUN curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && chmod +x linux-install-1.10.3.1020.sh && ./linux-install-1.10.3.1020.sh
+RUN sudo curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && chmod +x linux-install-1.10.3.1020.sh && ./linux-install-1.10.3.1020.sh
 
 
 # use my doom config
-USER gitpod
 RUN rm -rf ~/.emacs.d/ && git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 RUN ~/.emacs.d/bin/doom env 
 RUN yes | ~/.emacs.d/bin/doom -y install
