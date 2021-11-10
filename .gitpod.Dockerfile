@@ -16,6 +16,6 @@ RUN apt-get install -y fonts-hack rlwrap i3-wm
 RUN curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && chmod +x linux-install-1.10.3.1020.sh && ./linux-install-1.10.3.1020.sh
 
 USER gitpod
-#ENV WINDOW_MANAGER mutter
+ENV WINDOW_MANAGER openbox-session
 RUN  mkdir -p  /home/gitpod/.config/openbox
 RUN echo "emacs" >  /home/gitpod/.config/openbox/autostart
