@@ -8,4 +8,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y emacs27
 USER gitpod
 RUN rm -rf ~/.emacs.d/ && git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 RUN ~/.emacs.d/bin/doom env 
-RUN yes | ~/.emacs.d/bin/doom -y install 
+RUN yes | ~/.emacs.d/bin/doom -y install
+RUN rm -rf /home/gitpod/.doom.d/ && git clone https://github.com/behrica/doom.d.git /home/gitpod/.doom.d/
+RUN GIT_SSL_NO_VERIFY=true ~/.emacs.d/bin/doom -y sync

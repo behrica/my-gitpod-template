@@ -1,8 +1,5 @@
 image:
   file: .gitpod.Dockerfile
-tasks:
-  - git clone https://github.com/behrica/doom.d.git /home/gitpod/.doom.d/
-  - ~/.emacs.d/bin/doom -y sync
 
 vscode:
   extensions:
