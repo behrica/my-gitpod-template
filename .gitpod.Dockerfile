@@ -1,4 +1,13 @@
+# PROJECT specific configuration
 FROM gitpod/workspace-full-vnc:commit-24b60e9fc9a28e7967a129861736578d66101661
+
+# install Clojure
+RUN sudo curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && sudo chmod +x linux-install-1.10.3.1020.sh && sudo ./linux-install-1.10.3.1020.sh
+
+
+
+
+# USER specific configuration
 
 # install emacs27
 RUN sudo add-apt-repository -y ppa:kelleyk/emacs
@@ -7,8 +16,6 @@ RUN sudo apt-get remove -y emacs26-common emacs26 emacs-common emacs apel flim w
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y emacs27 fonts-hack rlwrap i3-wm
 
-# install Clojure
-RUN sudo curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && sudo chmod +x linux-install-1.10.3.1020.sh && sudo ./linux-install-1.10.3.1020.sh
 
 
 # use my doom config
