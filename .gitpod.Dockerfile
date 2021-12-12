@@ -1,11 +1,5 @@
 # PROJECT specific configuration
-FROM gitpod/workspace-full-vnc:commit-24b60e9fc9a28e7967a129861736578d66101661
-
-# install Clojure
-RUN sudo curl -O https://download.clojure.org/install/linux-install-1.10.3.1020.sh && sudo chmod +x linux-install-1.10.3.1020.sh && sudo ./linux-install-1.10.3.1020.sh
-
-
-
+FROM gitpod/workspace-full-vnc:latest
 
 # USER specific configuration
 
